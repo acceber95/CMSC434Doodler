@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.rebeccahe.cmsc434doodler.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.rebeccahe.cmsc434doodler.DoodleView
+            android:id="@+id/doodle_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="9"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginBottom="15dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Brush Size"
+                    android:id="@+id/brush_size_title" />
+
+                <SeekBar
+                    android:layout_width="1000px"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/seek_bar_size"
+                    android:layout_weight="9"
+                    android:max="500" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Text"
+                    android:id="@+id/seek_label" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Opacity"
+                    android:id="@+id/opacity_title" />
+
+                <SeekBar
+                    android:layout_width="1000px"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/seek_bar_opacity"
+                    android:layout_weight="9"
+                    android:max="100" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Text"
+                    android:id="@+id/seek_label_opacity" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Clear"
+                    android:id="@+id/button_clear"
+                    android:onClick="onClearButtonClick"
+                    android:textSize="14dp"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Color"
+                    android:id="@+id/button_color"
+                    android:onClick="onColorButtonClick"
+                    android:textSize="14dp"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Undo"
+                    android:id="@+id/button_undo"
+                    android:singleLine="false"
+                    android:onClick="onUndoButtonClick"
+                    android:textSize="14dp"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Redo"
+                    android:id="@+id/button_redo"
+                    android:singleLine="false"
+                    android:onClick="onRedoButtonClick"
+                    android:textSize="14dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:tools="http://schemas.android.com/tools"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:paddingBottom="@dimen/activity_vertical_margin"-->
+<!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
+<!--android:paddingRight="@dimen/activity_horizontal_margin"-->
+<!--android:paddingTop="@dimen/activity_vertical_margin"-->
+<!--tools:context="com.rebeccahe.cmsc434doodler.MainActivity">-->
+
+
+<!--<com.rebeccahe.cmsc434doodler.DoodleView-->
+    <!--android:id="@+id/doodle_view"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_above="@+id/button_clear"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_alignParentEnd="true" />-->
+
+<!--<Button-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Clear"-->
+    <!--android:id="@+id/button_clear"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:onClick="onClearButtonClick"/>-->
+
+<!--<Button-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Color"-->
+    <!--android:id="@+id/button_color"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:onClick="onColorButtonClick"-->
+    <!--android:layout_toEndOf="@+id/button_clear" />-->
+
+<!--<SeekBar-->
+    <!--android:layout_width="1000px"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/seek_bar_size"-->
+    <!--android:layout_weight="9"-->
+    <!--android:layout_above="@+id/button_clear"-->
+    <!--android:max="100"-->
+    <!--android:paddingBottom="10px"/>-->
+
+<!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="New Text"-->
+    <!--android:id="@+id/seek_label"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_alignTop="@+id/seek_bar_size"-->
+    <!--android:layout_alignBottom="@+id/doodle_view" />-->
+
+<!--<Button-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Undo"-->
+    <!--android:id="@+id/button_undo"-->
+    <!--android:singleLine="false"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_toEndOf="@+id/button_color" />-->
+
+<!--</RelativeLayout>-->
